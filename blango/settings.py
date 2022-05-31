@@ -53,6 +53,7 @@ class Dev(Configuration):
 
       'crispy_forms',
       'crispy_bootstrap5',
+      'debug_toolbar',
 
       'blog.apps.BlogConfig',
   ]
@@ -69,6 +70,7 @@ class Dev(Configuration):
       'django.contrib.auth.middleware.AuthenticationMiddleware',
       'django.contrib.messages.middleware.MessageMiddleware',
       #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+       "debug_toolbar.middleware.DebugToolbarMiddleware",
   ]
 
   ROOT_URLCONF = 'blango.urls'
@@ -140,6 +142,8 @@ class Dev(Configuration):
   # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
   DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+  
+  INTERNAL_IPS = ["192.168.11.179"]
 
   LOGGING = {
     "version": 1,
@@ -162,6 +166,7 @@ class Dev(Configuration):
         "level": "DEBUG",
     },
     }
+
 
 class Prod(Dev):
   DEBUG = False
