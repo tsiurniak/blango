@@ -10,6 +10,9 @@
         please login with an account that has access.</p>
         {% else %}
         <p>Please login to see this page.</p>
+        <p>
+            <a href="{% url "google_login" %}">Log in with Google</a>
+        </p>
         {% endif %}
     {% endif %}
     {% endcol %}
