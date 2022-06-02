@@ -32,13 +32,13 @@ class Dev(Configuration):
   DEBUG = True
 
   ALLOWED_HOSTS = ['*']
-  X_FRAME_OPTIONS = 'ALLOW-FROM ' + os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io'
-  CSRF_COOKIE_SAMESITE = None
-  CSRF_TRUSTED_ORIGINS = [os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io']
-  CSRF_COOKIE_SECURE = True
-  SESSION_COOKIE_SECURE = True
-  CSRF_COOKIE_SAMESITE = 'None'
-  SESSION_COOKIE_SAMESITE = 'None'
+#   X_FRAME_OPTIONS = 'ALLOW-FROM ' + os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io'
+#   CSRF_COOKIE_SAMESITE = None
+#   CSRF_TRUSTED_ORIGINS = [os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io']
+#   CSRF_COOKIE_SECURE = True
+#   SESSION_COOKIE_SECURE = True
+#   CSRF_COOKIE_SAMESITE = 'None'
+#   SESSION_COOKIE_SAMESITE = 'None'
 
 
   # Application definition
@@ -62,7 +62,9 @@ class Dev(Configuration):
       "allauth",
       "allauth.account",
       "allauth.socialaccount",
-      "allauth.socialaccount.providers.google"
+      "allauth.socialaccount.providers.google",
+      
+      "rest_framework",
   ]
 
   SITE_ID = 1
