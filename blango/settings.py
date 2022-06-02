@@ -65,6 +65,7 @@ class Dev(Configuration):
       "allauth.socialaccount.providers.google",
       
       "rest_framework",
+      "rest_framework.authtoken",
   ]
 
   SITE_ID = 1
@@ -79,6 +80,14 @@ class Dev(Configuration):
   CRISPY_TEMPLATE_PACK = "bootstrap5"
 
   EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+  REST_FRAMEWORK = {
+      "DEFAULT_AUTHENTICATION_CLASSES": [
+          "rest_framework.authentication.BasicAuthentication",
+          "rest_framework.authentication.SessionAuthentication",
+          "rest_framework.authentication.TokenAuthentication",
+      ]
+  }
 
   ACCOUNT_ACTIVATION_DAYS = 7
   
